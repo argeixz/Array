@@ -1,32 +1,52 @@
 #include <stdio.h>
+
 int main() {
-    int size = 50;
-    char words[size];
-    for (int i = 0; i < size; i++){
-    printf("Enter a word %d/%d:\n", i+1, size);
-    scanf("%s",&words[i]);
+    char words[100];
+    int length, i, count;
+
+     int count = 0;
+    while (word[count] != '\0') {
+        count++;
     }
-    for ( int i = 0; i < size; i++){
-    printf("%s ", words[i]);
+
+     i = 0;
+    while (i < length) {
+        printf("Enter a words:\n");
+        scanf("%s", words);
+        i++;
     }
-   printf("\n");
-     for ( int i = size - 1; i >= 0; i--){
-    printf("%s ", words[i]);
-      for (int head = 0; head < size/2; head++){
- }
-    int tail = size - 1;
+
+    // Original order
+     printf("Original ==> ");
+    for (int i = 0; i < count; i++) {
+        printf("%c", word[i]);
+    }
+    printf("\n");
+
+    printf("Reverse  ==> ");
+    for (int i = count - 1; i >= 0; i--) {
+        printf("%c", word[i]);
+    }
+    printf("\n");
+
+    // Palindrome check
     int palindrome = 1;
-         if (words[head] != words [tail]){
+    int head = 0;
+    int tail = length - 1;
+    while (head < tail) {
+        if ((words[head], words[tail]) != 0) {
             palindrome = 0;
             break;
         }
-            tail--;
-       }
-       if (palindrome){
-            printf("\nPalindrome!!");
-        }
-       else {
-            printf("\nNot Palindrome");
-        }
-        return 0;
+        head++;
+        tail--;
     }
+
+    if (palindrome) {
+        printf("\nPalindrome!!\n");
+    } else {
+        printf("\nNot Palindrome\n");
+    }
+
+    return 0;
+}
